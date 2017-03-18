@@ -13,6 +13,9 @@
         </style>
 </head>
 <body>
+    <script>
+    var score=0
+    </script>
     
    <h1>welcome to quiz 1</h1>
     
@@ -37,15 +40,31 @@
                   console.log(checkbox.value)
                   console.log(checkbox.checked)
                   
-                  if (checkbox.checked){
-                      if (checkbox.value=="Charles Barkley"){
-                         alert( "Correct, "+checkbox.value)
-                      } else{
-                          alert("incorrect")
+                      if (checkbox.checked){
+                          if (checkbox.value=="Charles Barkley"){
+
+                              score=score+33
+                              if (score> 100){
+                                  score=100
+                              }
+
+                               alert( "Correct, "+checkbox.value)
+
+                            alert("score is "+score)
+
+                          } else{
+
+                              score=score -33
+                              alert("incorrect")
+
+                              if (score< 0){
+                                  score=0
+                              }
+                              alert("score is"+score)
+                          }
                       }
                   }
-              }
-        }
+            }
      </script>
 
      <p> When did Basketball begin ?</p>
@@ -63,7 +82,7 @@
             var checkboxes = document.getElementsByName("question2");
           for(var checkbox of checkboxes){
               
-              console.log( checkbox.value)
+              console.log( checkbox.value
                  console.log(checkbox.checked)
                   if (checkbox.checked &&checkbox.value=="1898"){
                      alert( "Correct, "+checkbox.value)            
@@ -104,17 +123,24 @@
                     // Ask whether the value is 'clevlend'
                     if (checkbox.value === 'clevlend') {
                         // If yes...
+                        score=score+33
+                         if (score> 100){
+                              score=100
+                          }
                         alert('correct good job')
+                        alert('score is'+ score+'%')
                     } else {
                         // If no...
+                        score=score-33
                         alert('incorrect try agian')
+                        alert('score is'+ score+'%')
                     }
                 } else {
-                    // If checkbo is not checked...
+                    // If checkbox is not checked...
                     continue;
                 }
             }
         }    
-    
+    </script>
 </body>
 </html>
